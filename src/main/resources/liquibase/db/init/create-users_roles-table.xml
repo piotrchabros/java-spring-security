@@ -1,0 +1,34 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.7"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.7
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.7.xsd">
+
+    <changeSet id="1" author="itcpc">
+        <createTable tableName="users_roles" schemaName="users">
+            <column name="id" type="bigint"/>
+
+            <column name="user_id" type="bigint"/>
+            <column name="role_id" type="bigint"/>
+        </createTable>
+
+<!--        <addForeignKeyConstraint
+            constraintName="fk_user_id_users_roles"
+            baseColumnNames="user_id"
+            baseTableName="users_roles"
+            referencedColumnNames="id"
+            referencedTableName="users" />
+        <addForeignKeyConstraint
+            constraintName="fk_role_id_users_roles"
+            baseColumnNames="role_id"
+            baseTableName="users_roles"
+            referencedColumnNames="id"
+            referencedTableName="roles" />-->
+        <addUniqueConstraint columnNames="id" schemaName="users" tableName="users_roles" />
+        <addAutoIncrement
+                columnDataType="int"
+                columnName="id"
+                schemaName="users"
+                tableName="users_roles"/>
+    </changeSet>
+</databaseChangeLog>
