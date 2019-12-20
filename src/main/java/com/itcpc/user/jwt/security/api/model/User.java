@@ -1,4 +1,4 @@
-package com.itcpc.user.jwt.security.model;
+package com.itcpc.user.jwt.security.api.model;
 
 import lombok.Data;
 

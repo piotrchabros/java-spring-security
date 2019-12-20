@@ -1,7 +1,7 @@
-package com.itcpc.user.jwt.security.configuration;
+package com.itcpc.user.jwt.security.auth.configuration;
 
-import com.itcpc.user.jwt.security.filters.JwtRequestFilter;
-import com.itcpc.user.jwt.security.services.MyUserDetailsService;
+import com.itcpc.user.jwt.security.auth.filters.JwtRequestFilter;
+import com.itcpc.user.jwt.security.auth.services.MyUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

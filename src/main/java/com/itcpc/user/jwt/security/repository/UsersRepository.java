@@ -1,6 +1,6 @@
 package com.itcpc.user.jwt.security.repository;
 
-import com.itcpc.user.jwt.security.model.User;
+import com.itcpc.user.jwt.security.api.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

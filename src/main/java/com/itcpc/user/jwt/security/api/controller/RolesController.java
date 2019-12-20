@@ -1,4 +1,4 @@
-package com.itcpc.user.jwt.security.controller;
+package com.itcpc.user.jwt.security.api.controller;
 
 import com.itcpc.user.jwt.security.repository.RolesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ public class RolesController {
     RolesRepository rolesRepository;
 
     @GetMapping("/roles")
-    public ResponseEntity<?> getRoles(){
+    public ResponseEntity<?> getRoles() {
         return ResponseEntity.ok(rolesRepository.findAll());
     }
 }

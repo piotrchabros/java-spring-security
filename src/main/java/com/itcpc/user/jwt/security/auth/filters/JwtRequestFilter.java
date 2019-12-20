@@ -1,7 +1,7 @@
-package com.itcpc.user.jwt.security.filters;
+package com.itcpc.user.jwt.security.auth.filters;
 
-import com.itcpc.user.jwt.security.services.MyUserDetailsService;
-import com.itcpc.user.jwt.security.util.JwtUtil;
+import com.itcpc.user.jwt.security.auth.services.MyUserDetailsService;
+import com.itcpc.user.jwt.security.auth.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -32,16 +32,16 @@ public class JwtRequestFilter extends OncePerRequestFilter {
         String username = null;
         String jwt = null;
 
-        if(authorizationeader != null && authorizationeader.startsWith("Bearer")){
+        if (authorizationeader != null && authorizationeader.startsWith("Bearer")) {
             jwt = authorizationeader.substring(7);
             username = jwtUtil.extractUsername(jwt);
         }
 
-        if(username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+        if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
             UserDetails userDetails = this.userDetailsService.loadUserByUsername(username);
-            if(jwtUtil.validateToken(jwt, userDetails)) {
+            if (jwtUtil.validateToken(jwt, userDetails)) {
                 UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
-                        userDetails,null, userDetails.getAuthorities()
+                        userDetails, null, userDetails.getAuthorities()
                 );
                 usernamePasswordAuthenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(httpServletRequest));
                 SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);

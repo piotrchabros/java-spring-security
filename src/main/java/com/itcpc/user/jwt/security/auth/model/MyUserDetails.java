@@ -1,5 +1,6 @@
-package com.itcpc.user.jwt.security.model;
+package com.itcpc.user.jwt.security.auth.model;
 
+import com.itcpc.user.jwt.security.api.model.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -11,21 +12,24 @@ public class MyUserDetails implements UserDetails {
 
     private User user;
 
-    public MyUserDetails(User user){
+    public MyUserDetails(User user) {
         this.user = user;
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        if(user == null) return null;
-        return user.roles.stream().map(x ->
-        { GrantedAuthority authority = () -> x.getName(); return authority; }
+        if (user == null) return null;
+        return user.getRoles().stream().map(x ->
+                {
+                    GrantedAuthority authority = () -> x.getName();
+                    return authority;
+                }
         ).collect(Collectors.toCollection(ArrayList::new));
     }
 
     @Override
     public String getPassword() {
-        if(user == null) {
+        if (user == null) {
             return null;
         }
         return user.getPassword();
@@ -33,7 +37,7 @@ public class MyUserDetails implements UserDetails {
 
     @Override
     public String getUsername() {
-        if(user == null) {
+        if (user == null) {
             return null;
         }
         return user.getUsername();
@@ -46,7 +50,7 @@ public class MyUserDetails implements UserDetails {
 
     @Override
     public boolean isAccountNonLocked() {
-        if(user == null) {
+        if (user == null) {
             return false;
         }
         return user.isEnabled();
@@ -59,7 +63,7 @@ public class MyUserDetails implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        if(user == null) {
+        if (user == null) {
             return false;
         }
         return user.isEnabled();

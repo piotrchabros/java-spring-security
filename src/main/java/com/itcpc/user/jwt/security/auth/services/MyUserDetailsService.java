@@ -1,6 +1,6 @@
-package com.itcpc.user.jwt.security.services;
+package com.itcpc.user.jwt.security.auth.services;
 
-import com.itcpc.user.jwt.security.model.MyUserDetails;
+import com.itcpc.user.jwt.security.auth.model.MyUserDetails;
 import com.itcpc.user.jwt.security.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

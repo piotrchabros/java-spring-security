@@ -1,10 +1,10 @@
-package com.itcpc.user.jwt.security.controller;
+package com.itcpc.user.jwt.security.auth.controller;
 
-import com.itcpc.user.jwt.security.model.AuthenticationRequest;
-import com.itcpc.user.jwt.security.model.AuthenticationResponse;
-import com.itcpc.user.jwt.security.model.MyUserDetails;
+import com.itcpc.user.jwt.security.auth.model.AuthenticationRequest;
+import com.itcpc.user.jwt.security.auth.model.AuthenticationResponse;
+import com.itcpc.user.jwt.security.auth.model.MyUserDetails;
+import com.itcpc.user.jwt.security.auth.util.JwtUtil;
 import com.itcpc.user.jwt.security.repository.UsersRepository;
-import com.itcpc.user.jwt.security.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;

@@ -1,6 +1,6 @@
-package com.itcpc.user.jwt.security.controller;
+package com.itcpc.user.jwt.security.api.controller;
 
-import com.itcpc.user.jwt.security.model.User;
+import com.itcpc.user.jwt.security.api.model.User;
 import com.itcpc.user.jwt.security.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

@@ -1,4 +1,4 @@
-package com.itcpc.user.jwt.security.model;
+package com.itcpc.user.jwt.security.auth.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
