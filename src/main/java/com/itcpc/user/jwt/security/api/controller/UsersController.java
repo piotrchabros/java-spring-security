@@ -11,6 +11,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 import java.util.Optional;
 
 @RestController
@@ -73,6 +74,7 @@ public class UsersController {
             existingUser.setLanguage(newUser.getLanguage());
             existingUser.setPhone(newUser.getPhone());
             existingUser.setRoles(newUser.getRoles());
+            existingUser.setUpdatedAt(new Date());
 
             return ResponseEntity.ok(usersRepository.save(existingUser));
         } else {
@@ -91,6 +93,9 @@ public class UsersController {
         }
         String hashed = passwordEncoder.encode(user.getPassword());
         user.setPassword(hashed);
+
+        user.setCreatedAt(new Date());
+        user.setUpdatedAt(new Date());
 
         User savedUser = usersRepository.save(user);
         return ResponseEntity.ok(savedUser);

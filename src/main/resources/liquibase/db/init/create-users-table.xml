@@ -5,7 +5,7 @@
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.7.xsd">
 
     <changeSet id="1" author="itcpc">
-        <createTable tableName="users" schemaName="users">
+        <createTable tableName="USER">
             <column name="id" type="bigint"/>
 
             <column name="username" type="varchar(255)"/>
@@ -21,13 +21,23 @@
             <column name="language" type="varchar(255)"/>
 
             <column name="enabled" type="tinyint(1)"/>
+
+            <column name="created_at" type="datetime"/>
+            <column name="updated_at" type="datetime"/>
         </createTable>
 
-        <addUniqueConstraint columnNames="id" schemaName="users" tableName="users"/>
+        <addNotNullConstraint columnDataType="double"
+                              columnName="id"
+                              defaultNullValue=""
+                              tableName="USER"/>
+
+        <addPrimaryKey columnNames="id"
+                       constraintName="pk_users"
+                       tableName="USER"/>
+
         <addAutoIncrement
-                          columnDataType="int"
-                          columnName="id"
-                          schemaName="users"
-                          tableName="users"/>
+                columnDataType="bigint"
+                columnName="id"
+                tableName="USER"/>
     </changeSet>
 </databaseChangeLog>

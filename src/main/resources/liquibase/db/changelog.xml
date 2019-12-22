@@ -11,5 +11,4 @@
     <include file="data/load-roles-data.xml" relativeToChangelogFile="true"/>
     <include file="data/load-users_roles-data.xml" relativeToChangelogFile="true"/>
 
-
 </databaseChangeLog>

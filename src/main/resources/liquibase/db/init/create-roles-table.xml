@@ -5,15 +5,23 @@
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.7.xsd">
 
     <changeSet id="1" author="itcpc">
-        <createTable tableName="roles" schemaName="users">
+        <createTable tableName="ROLE">
             <column name="id" type="bigint"/>
             <column name="name" type="varchar(255)"/>
         </createTable>
-        <addUniqueConstraint columnNames="id" schemaName="users" tableName="roles" />
+
+        <addNotNullConstraint columnDataType="double"
+                              columnName="id"
+                              defaultNullValue=""
+                              tableName="ROLE"/>
+
+        <addPrimaryKey columnNames="id"
+                       constraintName="pk_roles"
+                       tableName="ROLE"/>
+
         <addAutoIncrement
-                columnDataType="int"
+                columnDataType="bigint"
                 columnName="id"
-                schemaName="users"
-                tableName="roles"/>
+                tableName="ROLE"/>
     </changeSet>
 </databaseChangeLog>

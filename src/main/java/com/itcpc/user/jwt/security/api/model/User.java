@@ -3,11 +3,12 @@ package com.itcpc.user.jwt.security.api.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 @Data
 @Entity
-@Table(name = "users")
+@Table(name = "USER")
 public class User {
 
     @Id
@@ -46,6 +47,12 @@ public class User {
 
     @Column(name = "enabled")
     private boolean enabled;
+
+    @Column(name = "created_at")
+    private Date createdAt;
+
+    @Column(name = "updated_at")
+    private Date updatedAt;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(

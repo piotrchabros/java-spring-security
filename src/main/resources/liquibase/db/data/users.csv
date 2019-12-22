@@ -1,2 +1,2 @@
-id;name;surname;username;password;phone;email;employees;country;language;company;enabled
-1;Piotr;Chabros;admin;$2y$12$ooRWpgRtqn5XljZsgPxLg.mB4nxl79MkJHcZ4HYXjuLui.rxLf.oK;123123;admin@admin.com;1-10;Poland;PL;ITCPC;1
+id;name;surname;username;password;phone;email;employees;country;language;company;enabled;created_at;updated_at
+1;Piotr;Chabros;admin;$2y$12$ooRWpgRtqn5XljZsgPxLg.mB4nxl79MkJHcZ4HYXjuLui.rxLf.oK;123123;admin@admin.com;1-10;Poland;PL;ITCPC;1;2019-12-20T00:00:00;2019-12-20T00:00:00

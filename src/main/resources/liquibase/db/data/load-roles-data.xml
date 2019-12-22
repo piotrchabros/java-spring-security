@@ -6,9 +6,8 @@
         <loadData
                 encoding="UTF-8"
                 file="/liquibase/db/data/roles.csv"
-                schemaName="users"
                 separator=";"
-                tableName="roles">
+                tableName="ROLE">
             <column name="id" type="numeric"/>
         </loadData>
     </changeSet>

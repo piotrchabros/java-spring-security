@@ -4,11 +4,10 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd">
     <changeSet author="itcpc" id="loadUsersData">
         <loadData
-                  encoding="UTF-8"
-                  file="/liquibase/db/data/users.csv"
-                  schemaName="users"
-                  separator=";"
-                  tableName="users">
+                encoding="UTF-8"
+                file="/liquibase/db/data/users.csv"
+                separator=";"
+                tableName="USER">
             <column name="id" type="numeric"/>
         </loadData>
     </changeSet>
